@@ -38,7 +38,7 @@ while True:
             w, h = x2 - x1, y2 - y1
             conf = math.ceil((box.conf[0] * 100)) / 100
             cls = int(box.cls[0])
-            #cv2.rectangle(img, f'{classNames[cls]} {conf}',(max(0, x1), max(35, y1)),color=(0,255,0), thickness=1)
+            cv2.putText(img, f'{classNames[cls]} {conf}',(max(0, x1), max(35, y1)),color=(0,255,0),fontFace=1,fontScale=1, thickness=2)
             print(f'{classNames[cls]} {conf}')
     fps = 1 / (new_frame_time - prev_frame_time)
     prev_frame_time = new_frame_time
